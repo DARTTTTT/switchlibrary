@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pro.switchlibrary" >
+
+    <application>
+        <activity android:name=".OWebActivity" />
+    </application>
+</manifest>
