@@ -11,24 +11,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="facc4c21-4e7b-4fb6-bbbb-1f9b53ca49d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SPUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_multidex_1_0_2_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_multidex_instrumentation_1_0_2_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/BaseActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/JsonEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SwitchMainEnter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SwitchMainEnter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/switchlibrary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/switchlibrary.iml" afterDir="false" />
-    </list>
+    <list default="true" id="facc4c21-4e7b-4fb6-bbbb-1f9b53ca49d4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,8 +142,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="274">
+              <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -4225,8 +4208,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="274">
+          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
         </state>
       </provider>
     </entry>
