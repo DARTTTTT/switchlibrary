@@ -25,6 +25,10 @@ public class AppConfig {
 
     public static final String EVENT_BUS_RELOAD_WEB = "reload";
     public static final String EVENT_BUS_REFRESH_PRODUCTLIST= "refresh";
+    public static final String ID= "ID";
+    public static final String BANK= "BANK";
+
+
 
 
     /*有盾人脸识别*/

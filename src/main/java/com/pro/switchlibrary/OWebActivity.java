@@ -1,33 +1,59 @@
 package com.pro.switchlibrary;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.ConsoleMessage;
 import android.webkit.DownloadListener;
 import android.webkit.SslErrorHandler;
 import android.webkit.ValueCallback;
+import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
+import com.baidu.ocr.sdk.OCR;
+import com.baidu.ocr.sdk.OnResultListener;
+import com.baidu.ocr.sdk.exception.OCRError;
+import com.baidu.ocr.sdk.model.IDCardParams;
+import com.baidu.ocr.sdk.model.IDCardResult;
+import com.pro.switchlibrary.camera.CameraActivity;
+import com.pro.switchlibrary.camera.FileUtil;
+import com.pro.switchlibrary.camera.RecognizeService;
+
+import java.io.File;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class OWebActivity extends BaseActivity {
 
-
+    private static final int REQUEST_CODE_PICK_IMAGE_FRONT = 201;
+    private static final int REQUEST_CODE_PICK_IMAGE_BACK = 202;
+    private static final int REQUEST_CODE_CAMERA = 102;
+    private static final int REQUEST_CODE_BANKCARD = 111;
 
     public static class UrlBuilder {
         private String url;
@@ -110,15 +136,12 @@ public class OWebActivity extends BaseActivity {
             mUrl = intent.getStringExtra(KEY_URL);
 
 
-
             Boolean hasService = intent.getBooleanExtra(KEY_HAS_SERVICE, false);
             //boolean hasCloseButton = intent.getBooleanExtra(KEY_HAS_CLOSE_BUTTON, false);
             String html = intent.getStringExtra(KEY_HTML);
             boolean hasShareArticle = intent.getBooleanExtra(KEY_HAS_SHARE_ARTICLE, false);
 
             boolean hasTitle = intent.getBooleanExtra(KEY_HAS_TITLE, true);
-
-
 
 
             if (!TextUtils.isEmpty(html)) {
@@ -133,13 +156,13 @@ public class OWebActivity extends BaseActivity {
     private void initViews() {
 
 
-
-
         mWebView = new WebView(getApplicationContext());
         FrameLayout container = (FrameLayout) findViewById(R.id.container);
         container.addView(mWebView);
         initWebViewSetting();
         mWebView.setBackgroundColor(0);
+        mWebView.addJavascriptInterface(new AppJs(this), "AppJs");
+
 
         mWebView.setWebViewClient(new WebViewClient() {
 
@@ -167,11 +190,11 @@ public class OWebActivity extends BaseActivity {
                     startAlipayActivity(url);
                     //pay.palmpay
                 } else if ((Build.VERSION.SDK_INT > Build.VERSION_CODES.M) && (url.contains("alipays://") || url.contains("mqqapi://"))) {
-                    Log.d("print", "shouldOverrideUrlLoading:683:: " + url);
+                    //   Log.d("print", "shouldOverrideUrlLoading:683:: " + url);
 
                     startAlipayActivity(url);
                 } else if (url.startsWith("weixin://")) {
-                    Log.d("print", "shouldOverrideUrlLoading:686:" + url);
+                    //   Log.d("print", "shouldOverrideUrlLoading:686:" + url);
                     //如果return false  就会先提示找不到页面，然后跳转微信
                     try {
                         Intent intent = new Intent();
@@ -183,7 +206,7 @@ public class OWebActivity extends BaseActivity {
                     }
                     return true;
                 } else if ((Build.VERSION.SDK_INT > Build.VERSION_CODES.M) && (url.startsWith("weixin://"))) {
-                    Log.d("print", "shouldOverrideUrlLoading:699: " + url);
+                    //  Log.d("print", "shouldOverrideUrlLoading:699: " + url);
 
                     try {
                         Intent intent = new Intent();
@@ -199,7 +222,7 @@ public class OWebActivity extends BaseActivity {
                     Map<String, String> extraHeaders = new HashMap<String, String>();
                     extraHeaders.put("Referer", "http://www.smartgouwu.com");
                     view.loadUrl(url, extraHeaders);
-                    Log.d("print", "shouldOverrideUrlLoading:729: " + url);
+                    //    Log.d("print", "shouldOverrideUrlLoading:729: " + url);
                     // mWebView.loadUrl(url);
                 }
 
@@ -222,6 +245,8 @@ public class OWebActivity extends BaseActivity {
                             + "Array.prototype.slice.call(document.getElementsByTagName('img')).forEach(function(item) { item.style.width = \"100%\"})");
                 }
             }
+
+
         });
         mWebView.setWebChromeClient(new WebChromeClient() {
             @Override
@@ -251,6 +276,7 @@ public class OWebActivity extends BaseActivity {
                 mWebFileUploader.onHoneyComB(valueCallback, acceptType);
             }
 
+
         });
         mWebView.setDownloadListener(new DownloadListener() {
             @Override
@@ -267,8 +293,6 @@ public class OWebActivity extends BaseActivity {
     }
 
 
-
-
     private static boolean isProgress = true;
 
     public static void openUrlWithTitle(Context context, String H5url) {
@@ -282,7 +306,11 @@ public class OWebActivity extends BaseActivity {
         }
     }
 
-    public static void openUrlNotitle(Context context, String H5url,String title) {
+    public static void openUrlNotitle(Context context, String H5url, String title) {
+       /* String url=new UrlBuilder().url(H5url)
+                .put("isSuperman",true)
+                .toUrl();*/
+
 
         isProgress = false;
         if (context != null) {
@@ -301,8 +329,6 @@ public class OWebActivity extends BaseActivity {
     private String mTitle;
 
     private WebFileUploader mWebFileUploader;
-
-
 
 
     @Override
@@ -365,7 +391,6 @@ public class OWebActivity extends BaseActivity {
     }
 
 
-
     // 调起支付宝并跳转到指定页面
     private void startAlipayActivity(String url) {
         Log.d("print", "startAlipayActivity:支付宝页面626: " + url);
@@ -417,13 +442,12 @@ public class OWebActivity extends BaseActivity {
 
     }
 
-
     @Override
     public void onBackPressed() {
         if (mWebView != null && mWebView.canGoBack()) {
-            goBack();
+            mWebView.goBack();
         } else {
-            super.onBackPressed();
+           // super.onBackPressed();
         }
     }
 
@@ -431,6 +455,43 @@ public class OWebActivity extends BaseActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
         mWebFileUploader.onResult(requestCode, resultCode, intent);
+        if (requestCode == REQUEST_CODE_PICK_IMAGE_FRONT && resultCode == Activity.RESULT_OK) {
+            Uri uri = intent.getData();
+            String filePath = getRealPathFromURI(uri);
+            recIDCard(IDCardParams.ID_CARD_SIDE_FRONT, filePath);
+        }
+
+        if (requestCode == REQUEST_CODE_PICK_IMAGE_BACK && resultCode == Activity.RESULT_OK) {
+            Uri uri = intent.getData();
+            String filePath = getRealPathFromURI(uri);
+            recIDCard(IDCardParams.ID_CARD_SIDE_BACK, filePath);
+        }
+
+        if (requestCode == REQUEST_CODE_CAMERA && resultCode == Activity.RESULT_OK) {
+            if (intent != null) {
+                String contentType = intent.getStringExtra(CameraActivity.KEY_CONTENT_TYPE);
+                String filePath = FileUtil.getSaveFile(getApplicationContext()).getAbsolutePath();
+                if (!TextUtils.isEmpty(contentType)) {
+                    if (CameraActivity.CONTENT_TYPE_ID_CARD_FRONT.equals(contentType)) {
+                        recIDCard(IDCardParams.ID_CARD_SIDE_FRONT, filePath);
+                    } else if (CameraActivity.CONTENT_TYPE_ID_CARD_BACK.equals(contentType)) {
+                        recIDCard(IDCardParams.ID_CARD_SIDE_BACK, filePath);
+                    }
+                }
+            }
+        }
+
+        // 识别成功回调，银行卡识别
+        if (requestCode == REQUEST_CODE_BANKCARD && resultCode == Activity.RESULT_OK) {
+            RecognizeService.recBankCard(this, FileUtil.getSaveFile(getApplicationContext()).getAbsolutePath(),
+                    new RecognizeService.ServiceListener() {
+                        @Override
+                        public void onResult(String result) {
+                            SPUtils.putString(AppConfig.BANK, result);
+
+                        }
+                    });
+        }
     }
 
 
@@ -445,5 +506,93 @@ public class OWebActivity extends BaseActivity {
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
+    }
+
+
+    private void recIDCard(String idCardSide, String filePath) {
+        IDCardParams param = new IDCardParams();
+        param.setImageFile(new File(filePath));
+        // 设置身份证正反面
+        param.setIdCardSide(idCardSide);
+        // 设置方向检测
+        param.setDetectDirection(true);
+        // 设置图像参数压缩质量0-100, 越大图像质量越好但是请求时间越长。 不设置则默认值为20
+        param.setImageQuality(20);
+
+        OCR.getInstance(this).recognizeIDCard(param, new OnResultListener<IDCardResult>() {
+            @Override
+            public void onResult(IDCardResult result) {
+                if (result != null) {
+                    SPUtils.putString(AppConfig.ID, result.toString());
+
+                }
+            }
+
+            @Override
+            public void onError(OCRError error) {
+
+            }
+        });
+    }
+
+    private String getRealPathFromURI(Uri contentURI) {
+        String result;
+        Cursor cursor = getContentResolver().query(contentURI, null, null, null, null);
+        if (cursor == null) { // Source is Dropbox or other similar local file path
+            result = contentURI.getPath();
+        } else {
+            cursor.moveToFirst();
+            int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            result = cursor.getString(idx);
+            cursor.close();
+        }
+        return result;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        boolean hasAllGranted = true;
+        for (int i = 0; i < grantResults.length; ++i) {
+            if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
+                hasAllGranted = false;
+                //在用户已经拒绝授权的情况下，如果shouldShowRequestPermissionRationale返回false则
+                // 可以推断出用户选择了“不在提示”选项，在这种情况下需要引导用户至设置页手动授权
+                if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
+                    //解释原因，并且引导用户至设置页手动授权
+                    new AlertDialog.Builder(this)
+                            .setMessage("获取相关权限失败,将导致部分功能无法正常使用，需要到设置页面手动授权")
+                            .setPositiveButton("去授权", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //引导用户至设置页手动授权
+                                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                                    Uri uri = Uri.fromParts("package", getApplicationContext().getPackageName(), null);
+                                    intent.setData(uri);
+                                    startActivity(intent);
+                                }
+                            })
+                            .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //引导用户手动授权，权限请求失败
+                                }
+                            }).setOnCancelListener(new DialogInterface.OnCancelListener() {
+                        @Override
+                        public void onCancel(DialogInterface dialog) {
+                            //引导用户手动授权，权限请求失败
+                        }
+                    }).show();
+
+                } else {
+                    //权限请求失败，但未选中“不再提示”选项
+                }
+                break;
+            }
+        }
+        if (hasAllGranted) {
+            //权限请求成功
+        }
+
     }
 }
