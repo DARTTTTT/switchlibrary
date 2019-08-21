@@ -21,13 +21,9 @@ import java.util.List;
 import static android.content.ContentValues.TAG;
 
 public class SwitchMainEnter {
-    private static final String KEY_TITLE = "title";
-    private static final String KEY_URL = "url";
-    private static final String KEY_HAS_SERVICE = "has_service";
+
 
     private static SwitchMainEnter instance;
-
-    private List<String> urlList1;
 
     public static SwitchMainEnter getInstance() {
 
