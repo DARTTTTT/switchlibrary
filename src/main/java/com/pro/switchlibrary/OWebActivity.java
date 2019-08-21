@@ -446,7 +446,7 @@ public class OWebActivity extends BaseActivity {
         if (mWebView != null && mWebView.canGoBack()) {
             mWebView.goBack();
         } else {
-           // super.onBackPressed();
+            // super.onBackPressed();
         }
     }
 
@@ -487,7 +487,7 @@ public class OWebActivity extends BaseActivity {
                         @Override
                         public void onResult(String result) {
                             SPUtils.putString(AppConfig.BANK, result);
-
+                            mWebView.loadUrl("javascript:sendMessageFromNative('" + result + "')");
                         }
                     });
         }
@@ -522,8 +522,7 @@ public class OWebActivity extends BaseActivity {
             @Override
             public void onResult(IDCardResult result) {
                 if (result != null) {
-                    SPUtils.putString(AppConfig.ID, result.toString());
-
+                    mWebView.loadUrl("javascript:sendMessageFromNative('" + result + "')");
                 }
             }
 

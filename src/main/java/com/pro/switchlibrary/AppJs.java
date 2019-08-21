@@ -48,8 +48,8 @@ public class AppJs extends Object {
     }
 
     @JavascriptInterface
-    public void postMessage() {
-        Toast.makeText(activity, "test", Toast.LENGTH_SHORT).show();
+    public void postMessage(String key) {
+
     }
 
     @JavascriptInterface
@@ -70,9 +70,9 @@ public class AppJs extends Object {
         return "true";
     }
 
-
+    //判断当前手机性能
     @JavascriptInterface
-    public String isPerformance(){
+    public String isPerformance() {
         return DeviceUtil.isPerformance(activity);
     }
 
@@ -85,12 +85,8 @@ public class AppJs extends Object {
     }
 
 
-
     @JavascriptInterface
     public void doDiscern(String value) {
-
-        SPUtils.remove(AppConfig.ID);
-        SPUtils.remove(AppConfig.BANK);
 
         if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED || ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
             ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 0x002);
@@ -108,7 +104,7 @@ public class AppJs extends Object {
                         FileUtil.getSaveFile(activity).getAbsolutePath());
                 intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_BACK);
                 activity.startActivityForResult(intent, REQUEST_CODE_CAMERA);
-            }else if (value.equals("bank")){
+            } else if (value.equals("bank")) {
                 Intent intent = new Intent(activity, CameraActivity.class);
                 intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
                         FileUtil.getSaveFile(activity).getAbsolutePath());
@@ -116,22 +112,11 @@ public class AppJs extends Object {
                         CameraActivity.CONTENT_TYPE_BANK_CARD);
                 activity.startActivityForResult(intent, REQUEST_CODE_BANKCARD);
             }
-
-
         }
 
     }
 
-    @JavascriptInterface
-    public String getCardResult(String value) {
-        if (value.equals(AppConfig.ID)){
-            result = SPUtils.getString(AppConfig.ID);
 
-        }else if (value.equals(AppConfig.BANK)){
-             result = SPUtils.getString(AppConfig.BANK);
-        }
-        return result;
-    }
 
 
     /**

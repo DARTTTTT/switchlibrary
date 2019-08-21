@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 
@@ -84,6 +85,9 @@ public class WebFileUploader {
     }
 
     public void onResult(int requestCode, int resultCode, Intent intent) {
+
+        Log.d("print", "onResult: "+requestCode+"   ---   "+resultCode );
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             if (mUploadMessage5 == null)
