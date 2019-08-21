@@ -96,7 +96,6 @@ public class OWebActivity extends BaseActivity {
         }
     }
 
-    private static final String TASK_CENTER_VERSION = "8";
 
     private static final String TAG = "WebView";
 
