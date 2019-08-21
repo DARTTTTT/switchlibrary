@@ -485,9 +485,13 @@ public class OWebActivity extends BaseActivity {
             RecognizeService.recBankCard(this, FileUtil.getSaveFile(getApplicationContext()).getAbsolutePath(),
                     new RecognizeService.ServiceListener() {
                         @Override
-                        public void onResult(String result) {
-                            SPUtils.putString(AppConfig.BANK, result);
-                            mWebView.loadUrl("javascript:sendMessageFromNative('" + result + "')");
+                        public void onResult(final String result) {
+                            mWebView.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mWebView.loadUrl("javascript:sendMessageFromNative('" + result + "')");
+                                }
+                            });
                         }
                     });
         }
@@ -520,9 +524,14 @@ public class OWebActivity extends BaseActivity {
 
         OCR.getInstance(this).recognizeIDCard(param, new OnResultListener<IDCardResult>() {
             @Override
-            public void onResult(IDCardResult result) {
+            public void onResult(final IDCardResult result) {
                 if (result != null) {
-                    mWebView.loadUrl("javascript:sendMessageFromNative('" + result + "')");
+                    mWebView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            mWebView.loadUrl("javascript:sendMessageFromNative('" + result + "')");
+                        }
+                    });
                 }
             }
 
