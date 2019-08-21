@@ -18,7 +18,6 @@ LinkTo(String url)方法 参数是String类型 url是H5端需要通过原生壳�
 
 doDiscern(String value)方法 参数是String类型 value是H5端传入原生壳的参数,front是识别身份证正面,back是识别身份证反面,bank是识别银行卡;
 
-getCardResult(String value)方法 参数是String类型,value是H5端传入原生壳的参数,ID是获取身份证的信息,BANK是获取银行卡的信息
 
 finishActivity()方法 关闭当前
 
