@@ -2,6 +2,7 @@
 
 Step one:
 SwitchMainEnter.getInstance().initOCR(this,AK ,SK); 
+
 Step two:
 SwitchMainEnter.getInstance().goToWeb(context,H5url,null);
 Context是上下文,H5url是从后台返回的运营版URL,null是当前H5没有标题.
