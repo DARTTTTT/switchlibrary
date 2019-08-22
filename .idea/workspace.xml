@@ -12,13 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="facc4c21-4e7b-4fb6-bbbb-1f9b53ca49d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,8 +78,8 @@
         <counts>
           <entry key="gradle" value="65" />
           <entry key="html" value="45" />
-          <entry key="java" value="5629" />
-          <entry key="txt" value="77" />
+          <entry key="java" value="5710" />
+          <entry key="txt" value="92" />
           <entry key="xml" value="184" />
         </counts>
       </usages-collector>
@@ -91,8 +87,8 @@
         <counts>
           <entry key="Groovy" value="65" />
           <entry key="HTML" value="45" />
-          <entry key="JAVA" value="5629" />
-          <entry key="PLAIN_TEXT" value="77" />
+          <entry key="JAVA" value="5710" />
+          <entry key="PLAIN_TEXT" value="92" />
           <entry key="XML" value="184" />
         </counts>
       </usages-collector>
@@ -103,12 +99,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1238">
-              <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+            <state relative-caret-position="301">
+              <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2006#2007#0" expanded="true" />
-                <element signature="e#2035#2036#0" expanded="true" />
+                <element signature="e#1940#1941#0" expanded="true" />
+                <element signature="e#1969#1970#0" expanded="true" />
+                <element signature="e#2046#2047#0" expanded="true" />
+                <element signature="e#2103#2104#0" expanded="true" />
+                <element signature="e#5006#5007#0" expanded="true" />
+                <element signature="e#5039#5040#0" expanded="true" />
+                <element signature="e#5358#5359#0" expanded="true" />
+                <element signature="e#5413#5414#0" expanded="true" />
+                <element signature="e#5455#5456#0" expanded="true" />
+                <element signature="e#5501#5502#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="976">
-              <caret line="233" column="45" selection-start-line="233" selection-start-column="45" selection-end-line="233" selection-end-column="45" />
+            <state relative-caret-position="352">
+              <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="100" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2937#3208#0" expanded="true" />
@@ -3574,19 +3578,19 @@
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/SplashActivity.java" />
         <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/layout_item_touch.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -3862,7 +3866,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566373313477</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="加入了指纹识别功能">
+      <created>1566467418063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1566467418063</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3876,9 +3887,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23190348" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23190348" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -3914,7 +3926,8 @@
     <MESSAGE value="修改了回调给JS的方法" />
     <MESSAGE value="修改了识别银行卡返回错误问题(要异步)" />
     <MESSAGE value="导入问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="导入问题" />
+    <MESSAGE value="加入了指纹识别功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入了指纹识别功能" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/CameraNativeHelper.java">
@@ -4254,10 +4267,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/layout_item_touch.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="976">
-          <caret line="233" column="45" selection-start-line="233" selection-start-column="45" selection-end-line="233" selection-end-column="45" />
+        <state relative-caret-position="352">
+          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="100" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2937#3208#0" expanded="true" />
@@ -4270,22 +4291,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/layout_item_touch.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1238">
-          <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+        <state relative-caret-position="301">
+          <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2006#2007#0" expanded="true" />
-            <element signature="e#2035#2036#0" expanded="true" />
+            <element signature="e#1940#1941#0" expanded="true" />
+            <element signature="e#1969#1970#0" expanded="true" />
+            <element signature="e#2046#2047#0" expanded="true" />
+            <element signature="e#2103#2104#0" expanded="true" />
+            <element signature="e#5006#5007#0" expanded="true" />
+            <element signature="e#5039#5040#0" expanded="true" />
+            <element signature="e#5358#5359#0" expanded="true" />
+            <element signature="e#5413#5414#0" expanded="true" />
+            <element signature="e#5455#5456#0" expanded="true" />
+            <element signature="e#5501#5502#0" expanded="true" />
           </folding>
         </state>
       </provider>

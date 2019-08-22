@@ -88,7 +88,7 @@ public class DeviceUtil {
     }
 
 
-    public static void TouchIDSupport(Activity context, final WebView webView) {
+    public static void TouchIDAuthenticate(Activity context, final WebView webView) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             FingerprintManagerCompat fingerprint = FingerprintManagerCompat.from(context);   //v4包下的API，包装内部已经判断Android系统版本是否大于6.0，这也是官方推荐的方式
             if (fingerprint.isHardwareDetected() == true) {
@@ -202,39 +202,42 @@ public class DeviceUtil {
             if (fingerprint.isHardwareDetected() == true) {
                 boolean b = fingerprint.hasEnrolledFingerprints();
                 if (b == true) {
-
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
                     final AlertDialog dialog = builder.create();
                     View dialogView = View.inflate(context, R.layout.layout_item_touch, null);
                     dialog.setView(dialogView);
                     dialog.show();
 
-                    fingerprint.authenticate(null, 0, new android.support.v4.os.CancellationSignal(), new FingerprintManagerCompat.AuthenticationCallback() {
-                        @Override
-                        public void onAuthenticationError(int errMsgId, CharSequence errString) {
-                            super.onAuthenticationError(errMsgId, errString);
-                            handler.obtainMessage(1, errMsgId, 0).sendToTarget();
-                            dialog.dismiss();
+                    if (dialog.isShowing()){
+                        fingerprint.authenticate(null, 0, new android.support.v4.os.CancellationSignal(), new FingerprintManagerCompat.AuthenticationCallback() {
+                            @Override
+                            public void onAuthenticationError(int errMsgId, CharSequence errString) {
+                                super.onAuthenticationError(errMsgId, errString);
+                                handler.obtainMessage(1, errMsgId, 0).sendToTarget();
+                                dialog.dismiss();
 
-                        }
+                            }
 
-                        @Override
-                        public void onAuthenticationSucceeded(FingerprintManagerCompat.AuthenticationResult result) {
-                            super.onAuthenticationSucceeded(result);
-                            handler.obtainMessage(2).sendToTarget();
-                            dialog.dismiss();
+                            @Override
+                            public void onAuthenticationSucceeded(FingerprintManagerCompat.AuthenticationResult result) {
+                                super.onAuthenticationSucceeded(result);
+                                handler.obtainMessage(2).sendToTarget();
+                                dialog.dismiss();
 
 
-                        }
+                            }
 
-                        @Override
-                        public void onAuthenticationFailed() {
-                            super.onAuthenticationFailed();
-                            handler.obtainMessage(3).sendToTarget();
-                            dialog.dismiss();
+                            @Override
+                            public void onAuthenticationFailed() {
+                                super.onAuthenticationFailed();
+                                handler.obtainMessage(3).sendToTarget();
+                                dialog.dismiss();
 
-                        }
-                    }, handler);
+                            }
+                        }, handler);
+
+                    }
+
 
 
 

@@ -5,7 +5,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Toast;
@@ -16,7 +18,7 @@ import com.pro.switchlibrary.camera.FileUtil;
 /**
  * 客服端和h5交互代码
  */
-public class AppJs  {
+public class AppJs {
 
     private static final String TAG = "AppJs";
     private static final int REQUEST_CODE_CAMERA = 102;
@@ -28,7 +30,7 @@ public class AppJs  {
 
     public AppJs(Activity activity, WebView webView) {
         this.activity = activity;
-        this.webView=webView;
+        this.webView = webView;
     }
 
 
@@ -87,8 +89,20 @@ public class AppJs  {
     }
 
     @JavascriptInterface
-    public void TouchIDSupport() {
-        DeviceUtil.TouchIDSupport(activity,webView);
+    public boolean TouchIDSupport() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            final FingerprintManagerCompat fingerprint = FingerprintManagerCompat.from(activity);   //v4包下的API，包装内部已经判断Android系统版本是否大于6.0，这也是官方推荐的方式
+            return fingerprint.hasEnrolledFingerprints();
+        } else {
+            return false;
+        }
+
+    }
+
+
+    @JavascriptInterface
+    public void TouchIDAuthenticate() {
+        DeviceUtil.TouchIDAuthenticate(activity, webView);
 
     }
 
