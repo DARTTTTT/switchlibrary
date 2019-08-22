@@ -15,20 +15,22 @@ public class AppConfig {
     public static final String ADDRESS_OF_USERHEADPIC = Environment.getExternalStorageDirectory() + "/cainiu";
 
     /*账户头像保存名称*/
-    public static final String NAME_OF_USERHEADPIC ="/userheadpic.jpg";
+    public static final String NAME_OF_USERHEADPIC = "/userheadpic.jpg";
 
 
     /*签名保存路径*/
-    public static final String ADDRESS_OF_HANDWRITE  = Environment.getExternalStorageDirectory().getAbsolutePath() +"/lt7";
+    public static final String ADDRESS_OF_HANDWRITE = Environment.getExternalStorageDirectory().getAbsolutePath() + "/lt7";
     /*签名保存名称*/
     public static final String NAME_OF_HANDWRITE = "0handwrite.jpg";
 
     public static final String EVENT_BUS_RELOAD_WEB = "reload";
-    public static final String EVENT_BUS_REFRESH_PRODUCTLIST= "refresh";
-    public static final String ID= "ID";
-    public static final String BANK= "BANK";
+    public static final String EVENT_BUS_REFRESH_PRODUCTLIST = "refresh";
+    public static final String ID = "ID";
+    public static final String BANK = "BANK";
 
-
+    public static final String key_touch_id = "key_touch_id:";
+    public static final String key_bank = "key_bank:";
+    public static final String key_identify = "key_identify:";
 
 
     /*有盾人脸识别*/

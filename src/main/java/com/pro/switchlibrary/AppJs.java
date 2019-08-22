@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 import android.webkit.JavascriptInterface;
+import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.pro.switchlibrary.camera.CameraActivity;
@@ -16,17 +16,19 @@ import com.pro.switchlibrary.camera.FileUtil;
 /**
  * 客服端和h5交互代码
  */
-public class AppJs extends Object {
+public class AppJs  {
 
     private static final String TAG = "AppJs";
     private static final int REQUEST_CODE_CAMERA = 102;
     private static final int REQUEST_CODE_BANKCARD = 111;
 
     private Activity activity;
+    private WebView webView;
     private String result;
 
-    public AppJs(Activity activity) {
+    public AppJs(Activity activity, WebView webView) {
         this.activity = activity;
+        this.webView=webView;
     }
 
 
@@ -84,6 +86,12 @@ public class AppJs extends Object {
 
     }
 
+    @JavascriptInterface
+    public void TouchIDSupport() {
+        DeviceUtil.TouchIDSupport(activity,webView);
+
+    }
+
 
     @JavascriptInterface
     public void doDiscern(String value) {
@@ -115,8 +123,6 @@ public class AppJs extends Object {
         }
 
     }
-
-
 
 
     /**

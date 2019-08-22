@@ -160,7 +160,7 @@ public class OWebActivity extends BaseActivity {
         container.addView(mWebView);
         initWebViewSetting();
         mWebView.setBackgroundColor(0);
-        mWebView.addJavascriptInterface(new AppJs(this), "AppJs");
+        mWebView.addJavascriptInterface(new AppJs(this,mWebView), "AppJs");
 
 
         mWebView.setWebViewClient(new WebViewClient() {
@@ -489,7 +489,7 @@ public class OWebActivity extends BaseActivity {
                             mWebView.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    mWebView.loadUrl("javascript:sendMessageFromNative('" + result + "')");
+                                    mWebView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_bank+ result + "')");
                                 }
                             });
                         }
@@ -529,7 +529,7 @@ public class OWebActivity extends BaseActivity {
                     mWebView.post(new Runnable() {
                         @Override
                         public void run() {
-                            mWebView.loadUrl("javascript:sendMessageFromNative('" + result + "')");
+                            mWebView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_identify+ result + "')");
                         }
                     });
                 }

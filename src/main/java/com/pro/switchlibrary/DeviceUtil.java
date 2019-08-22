@@ -3,25 +3,38 @@ package com.pro.switchlibrary;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.hardware.fingerprint.FingerprintManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.os.CancellationSignal;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -38,6 +51,13 @@ import java.util.Iterator;
 import java.util.List;
 
 public class DeviceUtil {
+
+    private FingerprintManagerCompat.CryptoObject crypto;
+    private CancellationSignal cancel;
+
+    static Handler handler;
+
+
     /**
      * 获取设备宽度（px）
      *
@@ -65,6 +85,168 @@ public class DeviceUtil {
      */
     public static boolean isSDCardAvailable() {
         return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+    }
+
+
+    public static void TouchIDSupport(Activity context, final WebView webView) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            FingerprintManagerCompat fingerprint = FingerprintManagerCompat.from(context);   //v4包下的API，包装内部已经判断Android系统版本是否大于6.0，这也是官方推荐的方式
+            if (fingerprint.isHardwareDetected() == true) {
+                boolean b = fingerprint.hasEnrolledFingerprints();
+                if (b == true) {
+                    touch(context, webView);
+                } else {
+                    webView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "当前设备还未录入指纹" + "')");
+
+                        }
+                    });
+
+                }
+            }else {
+                webView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id+"当前设备不支持指纹识别" + "')");
+
+                    }
+                });
+
+            }
+
+        } else {
+            webView.post(new Runnable() {
+                @Override
+                public void run() {
+                    webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "当前设备版本较低" + "')");
+
+                }
+            });
+
+        }
+    }
+
+    private static void handleErrorCode(Context context, int code, WebView webView) {
+        switch (code) {
+            case FingerprintManager.FINGERPRINT_ERROR_CANCELED:
+                //todo 指纹传感器不可用，该操作被取消
+                //Toast.makeText(context, "验证错误", Toast.LENGTH_SHORT).show();
+                webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证错误" + "')");
+
+                break;
+            case FingerprintManager.FINGERPRINT_ERROR_HW_UNAVAILABLE:
+                //todo 当前设备不可用，请稍后再试
+                //Toast.makeText(context, "验证错误", Toast.LENGTH_SHORT).show();
+                webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证错误" + "')");
+
+                break;
+            case FingerprintManager.FINGERPRINT_ERROR_LOCKOUT:
+                //todo 由于太多次尝试失败导致被锁，该操作被取消
+                //Toast.makeText(context, "由于太多次尝试失败导致被锁，该操作被取消", Toast.LENGTH_SHORT).show();
+                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id+"由于太多次尝试失败导致被锁，该操作被取消" + "')");
+
+                break;
+            case FingerprintManager.FINGERPRINT_ERROR_NO_SPACE:
+                //todo 没有足够的存储空间保存这次操作，该操作不能完成
+                // Toast.makeText(context, "没有足够的存储空间保存这次操作，该操作不能完成", Toast.LENGTH_SHORT).show();
+                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id+"没有足够的存储空间保存这次操作，该操作不能完成" + "')");
+
+                break;
+            case FingerprintManager.FINGERPRINT_ERROR_TIMEOUT:
+                //todo 操作时间太长，一般为30秒
+                //Toast.makeText(context, "验证错误", Toast.LENGTH_SHORT).show();
+                webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证错误" + "')");
+
+                break;
+            case FingerprintManager.FINGERPRINT_ERROR_UNABLE_TO_PROCESS:
+                //todo 传感器不能处理当前指纹图片
+                //Toast.makeText(context, "验证错误", Toast.LENGTH_SHORT).show();
+                webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证错误" + "')");
+
+                break;
+        }
+    }
+
+    public static void touch(final Activity context, final WebView webView) {
+
+        handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                switch (msg.what) {
+                    case 1:   //验证错误
+                        //todo 界面处理
+                        handleErrorCode(context, msg.arg1, webView);
+                        break;
+                    case 2:   //验证成功
+                        //todo 界面处理
+                        //Toast.makeText(context, "验证成功", Toast.LENGTH_SHORT).show();
+                        webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证成功" + "')");
+
+                        break;
+                    case 3:    //验证失败
+                        //todo 界面处理
+                        //Toast.makeText(context, "验证失败···", Toast.LENGTH_SHORT).show();
+                        webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证失败" + "')");
+
+                        break;
+                }
+
+            }
+        };
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            final FingerprintManagerCompat fingerprint = FingerprintManagerCompat.from(context);   //v4包下的API，包装内部已经判断Android系统版本是否大于6.0，这也是官方推荐的方式
+            if (fingerprint.isHardwareDetected() == true) {
+                boolean b = fingerprint.hasEnrolledFingerprints();
+                if (b == true) {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    final AlertDialog dialog = builder.create();
+                    View dialogView = View.inflate(context, R.layout.layout_item_touch, null);
+                    dialog.setView(dialogView);
+                    dialog.show();
+
+                    fingerprint.authenticate(null, 0, new android.support.v4.os.CancellationSignal(), new FingerprintManagerCompat.AuthenticationCallback() {
+                        @Override
+                        public void onAuthenticationError(int errMsgId, CharSequence errString) {
+                            super.onAuthenticationError(errMsgId, errString);
+                            handler.obtainMessage(1, errMsgId, 0).sendToTarget();
+                            dialog.dismiss();
+
+                        }
+
+                        @Override
+                        public void onAuthenticationSucceeded(FingerprintManagerCompat.AuthenticationResult result) {
+                            super.onAuthenticationSucceeded(result);
+                            handler.obtainMessage(2).sendToTarget();
+                            dialog.dismiss();
+
+
+                        }
+
+                        @Override
+                        public void onAuthenticationFailed() {
+                            super.onAuthenticationFailed();
+                            handler.obtainMessage(3).sendToTarget();
+                            dialog.dismiss();
+
+                        }
+                    }, handler);
+
+
+
+                } else {
+
+                }
+
+
+            }
+
+
+        }
     }
 
 
@@ -310,7 +492,7 @@ public class DeviceUtil {
         Log.d("SplashActivity", "isPerformance:310:   " + d);
         if (sdkInt > 27 && d >= 6) {
             performance = "A+";
-        } else if (sdkInt >= 23 && sdkInt <=27 && d >= 4 && d < 6) {
+        } else if (sdkInt >= 23 && sdkInt <= 27 && d >= 4 && d < 6) {
             performance = "A";
         } else if (sdkInt >= 23 && d < 4 && d >= 3) {
             performance = "B+";
