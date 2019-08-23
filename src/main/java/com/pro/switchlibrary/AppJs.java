@@ -3,11 +3,11 @@ package com.pro.switchlibrary;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
+import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Toast;
@@ -64,6 +64,7 @@ public class AppJs {
     @JavascriptInterface
     public String GetDeviceInfo() {
         String phoneInfo = DeviceUtil.getPhoneInfo(activity);
+        Log.d(TAG, "GetDeviceInfo:68:  " + phoneInfo);
         return phoneInfo;
     }
 
@@ -85,7 +86,6 @@ public class AppJs {
         Uri content_url = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, content_url);
         activity.startActivity(intent);
-
     }
 
     @JavascriptInterface
@@ -96,44 +96,71 @@ public class AppJs {
         } else {
             return false;
         }
-
     }
 
 
     @JavascriptInterface
     public void TouchIDAuthenticate() {
         DeviceUtil.TouchIDAuthenticate(activity, webView);
+    }
 
+
+    private void goToCameraActivity(String value) {
+        if (value.equals("front")) {
+
+            Intent intent = new Intent(activity, CameraActivity.class);
+            intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
+                    FileUtil.getSaveFile(activity).getAbsolutePath());
+            intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
+
+            activity.startActivityForResult(intent, REQUEST_CODE_CAMERA);
+        } else if (value.equals("back")) {
+
+            Intent intent = new Intent(activity, CameraActivity.class);
+            intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
+                    FileUtil.getSaveFile(activity).getAbsolutePath());
+            intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_BACK);
+            activity.startActivityForResult(intent, REQUEST_CODE_CAMERA);
+        } else if (value.equals("bank")) {
+
+            Intent intent = new Intent(activity, CameraActivity.class);
+            intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
+                    FileUtil.getSaveFile(activity).getAbsolutePath());
+            intent.putExtra(CameraActivity.KEY_CONTENT_TYPE,
+                    CameraActivity.CONTENT_TYPE_BANK_CARD);
+            activity.startActivityForResult(intent, REQUEST_CODE_BANKCARD);
+        }
     }
 
 
     @JavascriptInterface
     public void doDiscern(String value) {
 
-        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED || ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 0x002);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (DeviceUtil.isAllGranted(activity)) {
+                if (DeviceUtil.isMIUI()) {
+                    if (!DeviceUtil.initMiuiPermission(activity)) {
+                        DeviceUtil.openMiuiAppDetails(activity);
+                        return;
+                    }
+                }
+                goToCameraActivity(value);
+                return;
+            } else {
+                ActivityCompat.requestPermissions(activity,
+                        new String[]{/*Manifest.permission.READ_PHONE_STATE,
+                                Manifest.permission.ACCESS_COARSE_LOCATION,
+                                Manifest.permission.ACCESS_FINE_LOCATION,
+                                Manifest.permission.READ_EXTERNAL_STORAGE,*/
+                                Manifest.permission.CAMERA,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE
 
-        } else {
-            if (value.equals("front")) {
-                Intent intent = new Intent(activity, CameraActivity.class);
-                intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
-                        FileUtil.getSaveFile(activity).getAbsolutePath());
-                intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
-                activity.startActivityForResult(intent, REQUEST_CODE_CAMERA);
-            } else if (value.equals("back")) {
-                Intent intent = new Intent(activity, CameraActivity.class);
-                intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
-                        FileUtil.getSaveFile(activity).getAbsolutePath());
-                intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_BACK);
-                activity.startActivityForResult(intent, REQUEST_CODE_CAMERA);
-            } else if (value.equals("bank")) {
-                Intent intent = new Intent(activity, CameraActivity.class);
-                intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
-                        FileUtil.getSaveFile(activity).getAbsolutePath());
-                intent.putExtra(CameraActivity.KEY_CONTENT_TYPE,
-                        CameraActivity.CONTENT_TYPE_BANK_CARD);
-                activity.startActivityForResult(intent, REQUEST_CODE_BANKCARD);
+                        },
+                        AppConfig.MY_PERMISSION_REQUEST_CODE);
+
             }
+
+
         }
 
     }

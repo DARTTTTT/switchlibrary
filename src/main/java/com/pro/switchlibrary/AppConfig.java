@@ -32,6 +32,7 @@ public class AppConfig {
     public static final String key_bank = "key_bank:";
     public static final String key_identify = "key_identify:";
 
+    public static final int MY_PERMISSION_REQUEST_CODE = 10000;
 
     /*有盾人脸识别*/
     public static final String PUB_KEY = "7daf26e9-f100-412f-9bf6-c292b3949291";

@@ -12,9 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="facc4c21-4e7b-4fb6-bbbb-1f9b53ca49d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,81 +43,91 @@
     <session id="1041104423">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="3" />
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="4" />
+          <entry key="class" value="5" />
           <entry key="gitignore" value="1" />
-          <entry key="gradle" value="44" />
+          <entry key="gradle" value="46" />
           <entry key="html" value="2" />
-          <entry key="java" value="185" />
+          <entry key="java" value="206" />
           <entry key="json" value="1" />
-          <entry key="png" value="1" />
+          <entry key="png" value="3" />
           <entry key="pro" value="1" />
-          <entry key="xml" value="42" />
+          <entry key="xml" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="4" />
-          <entry key="Groovy" value="44" />
+          <entry key="CLASS" value="5" />
+          <entry key="Groovy" value="46" />
           <entry key="HTML" value="2" />
-          <entry key="Image" value="1" />
-          <entry key="JAVA" value="185" />
+          <entry key="Image" value="3" />
+          <entry key="JAVA" value="206" />
           <entry key="JSON" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="ProGuard File" value="1" />
-          <entry key="XML" value="42" />
+          <entry key="XML" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gradle" value="65" />
+          <entry key="gradle" value="74" />
           <entry key="html" value="45" />
-          <entry key="java" value="5710" />
-          <entry key="txt" value="92" />
-          <entry key="xml" value="184" />
+          <entry key="java" value="6867" />
+          <entry key="txt" value="112" />
+          <entry key="xml" value="243" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="65" />
+          <entry key="Groovy" value="74" />
           <entry key="HTML" value="45" />
-          <entry key="JAVA" value="5710" />
-          <entry key="PLAIN_TEXT" value="92" />
-          <entry key="XML" value="184" />
+          <entry key="JAVA" value="6867" />
+          <entry key="PLAIN_TEXT" value="112" />
+          <entry key="XML" value="243" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+            <state relative-caret-position="813">
+              <caret line="135" column="24" lean-forward="true" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1940#1941#0" expanded="true" />
-                <element signature="e#1969#1970#0" expanded="true" />
-                <element signature="e#2046#2047#0" expanded="true" />
-                <element signature="e#2103#2104#0" expanded="true" />
-                <element signature="e#5006#5007#0" expanded="true" />
-                <element signature="e#5039#5040#0" expanded="true" />
-                <element signature="e#5358#5359#0" expanded="true" />
-                <element signature="e#5413#5414#0" expanded="true" />
-                <element signature="e#5455#5456#0" expanded="true" />
-                <element signature="e#5501#5502#0" expanded="true" />
+                <element signature="e#5203#5204#0" expanded="true" />
+                <element signature="e#5236#5237#0" expanded="true" />
+                <element signature="e#5555#5556#0" expanded="true" />
+                <element signature="e#5610#5611#0" expanded="true" />
+                <element signature="e#5652#5653#0" expanded="true" />
+                <element signature="e#5698#5699#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+              <folding>
+                <element signature="e#22700#22880#0" expanded="true" />
+                <element signature="e#22879#22880#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,27 +136,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="100" selection-end-column="43" />
+            <state relative-caret-position="273">
+              <caret line="457" column="27" lean-forward="true" selection-start-line="457" selection-start-column="27" selection-end-line="457" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2937#3208#0" expanded="true" />
-                <element signature="e#3207#3208#0" expanded="true" />
-                <element signature="e#3279#3531#0" expanded="true" />
-                <element signature="e#3530#3531#0" expanded="true" />
-                <element signature="e#3592#3821#0" expanded="true" />
-                <element signature="e#3820#3821#0" expanded="true" />
+                <element signature="e#16704#16741#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/layout_item_touch.xml">
-          <provider editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/JumpPermissionManagement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="138">
+              <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,8 +165,8 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -164,6 +176,7 @@
       <find>READ_PHONE_STATE</find>
       <find>SimOperatorName</find>
       <find>Manifest.permission.CAMERA</find>
+      <find>initMiuiPermission</find>
     </findStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -3532,7 +3545,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/ocr/CameraManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/ocr/CameraConfigurationManager.java" />
@@ -3573,24 +3585,25 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SwitchMainEnter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/WebFileUploader.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/../app/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/SplashActivity.java" />
         <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/layout_item_touch.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/JumpPermissionManagement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -3600,83 +3613,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="mipmap-xxxhdpi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -3708,6 +3644,57 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="switchlibrary" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3719,7 +3706,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../AndroidSDK/SDK" />
     <property name="device.picker.selection" value="fc2d5227ce50" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../BiometricPromptDemo-master/BiometricPromptDemo-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../pengfeilu-PermissionDemo-master/PermissionDemo" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -3873,7 +3860,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566467418063</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="修改了指纹识别的方法">
+      <created>1566469440761</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1566469440761</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3890,7 +3884,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23190348" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.27412868" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -3902,9 +3896,9 @@
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Android Profiler" order="3" />
       <window_info anchor="bottom" id="Debug" order="4" />
-      <window_info anchor="bottom" id="Logcat" order="5" weight="0.3602837" />
+      <window_info anchor="bottom" id="Logcat" order="5" sideWeight="0.49865952" weight="0.33617023" />
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.32907802" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5013405" side_tool="true" weight="0.3602837" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32907802" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32765958" />
@@ -3927,39 +3921,10 @@
     <MESSAGE value="修改了识别银行卡返回错误问题(要异步)" />
     <MESSAGE value="导入问题" />
     <MESSAGE value="加入了指纹识别功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入了指纹识别功能" />
+    <MESSAGE value="修改了指纹识别的方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了指纹识别的方法" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/CameraNativeHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/CropView.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/FrameOverlayView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/bd_ocr_confirm_result.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/OCRFrameLayout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-185">
@@ -3968,8 +3933,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/o_activity_web.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/ImageUtil.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3979,12 +3944,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/bd_ocr_crop.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/IDcardQualityProcess.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -4014,30 +3979,20 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/bd_ocr_take_picture.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1269">
           <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/bd_ocr_activity_camera.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/CameraActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="83" column="44" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/android/view/KeyEvent.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -4060,20 +4015,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/android/content/pm/PackageManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="553" column="28" selection-start-line="553" selection-start-column="28" selection-end-line="553" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/PermissionUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="54" column="9" selection-start-line="37" selection-start-column="7" selection-end-line="54" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4122,13 +4067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="4541" column="7" lean-forward="true" selection-start-line="4541" selection-start-column="7" selection-end-line="4541" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/com/android/carrierdefaultapp/CaptivePortalLoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -4164,14 +4102,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="72" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/WebFileUploader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2025">
@@ -4179,37 +4109,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/android/os/Build.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="232" column="32" selection-start-line="232" selection-start-column="32" selection-end-line="232" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/AppContext.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -4236,20 +4145,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/layout_item_touch.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2944">
-          <caret line="531" column="105" selection-start-line="531" selection-start-column="105" selection-end-line="531" selection-end-column="105" />
+        <state relative-caret-position="594">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/yyjr_bg.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/yyjr_logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/android/content/pm/PackageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="553" column="46" selection-start-line="553" selection-start-column="28" selection-end-line="553" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/MaskView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="4501" column="16" selection-start-line="4501" selection-start-column="16" selection-end-line="4501" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/4f389519c6b5565a38a72e23e62acde9/jars/classes.jar!/android/support/v4/app/ActivityCompat.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/CameraActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6344">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding>
-            <element signature="e#16802#17319#0" expanded="true" />
-            <element signature="e#16987#17269#0" expanded="true" />
-            <element signature="e#17268#17269#0" expanded="true" />
-            <element signature="e#17318#17319#0" expanded="true" />
-            <element signature="e#18385#18627#0" expanded="true" />
-            <element signature="e#18626#18627#0" expanded="true" />
-            <element signature="e#21186#21425#0" expanded="true" />
-            <element signature="e#21424#21425#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2480#2792#0" expanded="true" />
+            <element signature="e#2791#2792#0" expanded="true" />
+            <element signature="e#14090#14836#0" expanded="true" />
+            <element signature="e#14835#14836#0" expanded="true" />
+            <element signature="e#18733#18768#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/android/os/Build.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="737" column="32" selection-start-line="737" selection-start-column="32" selection-end-line="737" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -4262,51 +4240,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
+        <state relative-caret-position="217">
+          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/layout_item_touch.xml">
-      <provider editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/JumpPermissionManagement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="138">
+          <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="100" selection-end-column="43" />
+        <state relative-caret-position="273">
+          <caret line="457" column="27" lean-forward="true" selection-start-line="457" selection-start-column="27" selection-end-line="457" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2937#3208#0" expanded="true" />
-            <element signature="e#3207#3208#0" expanded="true" />
-            <element signature="e#3279#3531#0" expanded="true" />
-            <element signature="e#3530#3531#0" expanded="true" />
-            <element signature="e#3592#3821#0" expanded="true" />
-            <element signature="e#3820#3821#0" expanded="true" />
+            <element signature="e#16704#16741#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+        <state relative-caret-position="813">
+          <caret line="135" column="24" lean-forward="true" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1940#1941#0" expanded="true" />
-            <element signature="e#1969#1970#0" expanded="true" />
-            <element signature="e#2046#2047#0" expanded="true" />
-            <element signature="e#2103#2104#0" expanded="true" />
-            <element signature="e#5006#5007#0" expanded="true" />
-            <element signature="e#5039#5040#0" expanded="true" />
-            <element signature="e#5358#5359#0" expanded="true" />
-            <element signature="e#5413#5414#0" expanded="true" />
-            <element signature="e#5455#5456#0" expanded="true" />
-            <element signature="e#5501#5502#0" expanded="true" />
+            <element signature="e#5203#5204#0" expanded="true" />
+            <element signature="e#5236#5237#0" expanded="true" />
+            <element signature="e#5555#5556#0" expanded="true" />
+            <element signature="e#5610#5611#0" expanded="true" />
+            <element signature="e#5652#5653#0" expanded="true" />
+            <element signature="e#5698#5699#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+          <folding>
+            <element signature="e#22700#22880#0" expanded="true" />
+            <element signature="e#22879#22880#0" expanded="true" />
           </folding>
         </state>
       </provider>

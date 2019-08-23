@@ -1,8 +1,8 @@
 package com.pro.switchlibrary;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -47,6 +48,8 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.pro.switchlibrary.AppConfig.MY_PERMISSION_REQUEST_CODE;
 
 public class OWebActivity extends BaseActivity {
 
@@ -114,8 +117,49 @@ public class OWebActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+      //  initPermission();
 
     }
+
+
+    public void initPermission() {
+//        判断是否是6.0以上的系统
+        if (Build.VERSION.SDK_INT >= 23) {
+            //
+            if (DeviceUtil.isAllGranted(this)) {
+                if (DeviceUtil.isMIUI()) {
+                    if (!DeviceUtil.initMiuiPermission(this)) {
+                        DeviceUtil.openMiuiAppDetails(this);
+                        return;
+                    }
+                }
+
+                return;
+            } else {
+
+                /**
+                 * 第 2 步: 请求权限
+                 */
+                // 一次请求多个权限, 如果其他有权限是已经授予的将会自动忽略掉
+                ActivityCompat.requestPermissions(
+                        this,
+                        new String[]{
+                                Manifest.permission.READ_PHONE_STATE,
+                                Manifest.permission.ACCESS_COARSE_LOCATION,
+                                Manifest.permission.ACCESS_FINE_LOCATION,
+                                Manifest.permission.CAMERA,
+                                Manifest.permission.READ_EXTERNAL_STORAGE,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE
+                        },
+                        MY_PERMISSION_REQUEST_CODE
+                );
+            }
+        } else {
+           // gotoHomeActivity();
+        }
+    }
+
+
 
     @Override
     protected int setContentLayout() {
@@ -160,7 +204,7 @@ public class OWebActivity extends BaseActivity {
         container.addView(mWebView);
         initWebViewSetting();
         mWebView.setBackgroundColor(0);
-        mWebView.addJavascriptInterface(new AppJs(this,mWebView), "AppJs");
+        mWebView.addJavascriptInterface(new AppJs(this, mWebView), "AppJs");
 
 
         mWebView.setWebViewClient(new WebViewClient() {
@@ -489,7 +533,7 @@ public class OWebActivity extends BaseActivity {
                             mWebView.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    mWebView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_bank+ result + "')");
+                                    mWebView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_bank + result + "')");
                                 }
                             });
                         }
@@ -529,7 +573,7 @@ public class OWebActivity extends BaseActivity {
                     mWebView.post(new Runnable() {
                         @Override
                         public void run() {
-                            mWebView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_identify+ result + "')");
+                            mWebView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_identify + result + "')");
                         }
                     });
                 }
@@ -559,47 +603,78 @@ public class OWebActivity extends BaseActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        boolean hasAllGranted = true;
-        for (int i = 0; i < grantResults.length; ++i) {
-            if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                hasAllGranted = false;
-                //在用户已经拒绝授权的情况下，如果shouldShowRequestPermissionRationale返回false则
-                // 可以推断出用户选择了“不在提示”选项，在这种情况下需要引导用户至设置页手动授权
-                if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
-                    //解释原因，并且引导用户至设置页手动授权
-                    new AlertDialog.Builder(this)
-                            .setMessage("获取相关权限失败,将导致部分功能无法正常使用，需要到设置页面手动授权")
-                            .setPositiveButton("去授权", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //引导用户至设置页手动授权
-                                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                                    Uri uri = Uri.fromParts("package", getApplicationContext().getPackageName(), null);
-                                    intent.setData(uri);
-                                    startActivity(intent);
-                                }
-                            })
-                            .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //引导用户手动授权，权限请求失败
-                                }
-                            }).setOnCancelListener(new DialogInterface.OnCancelListener() {
-                        @Override
-                        public void onCancel(DialogInterface dialog) {
-                            //引导用户手动授权，权限请求失败
-                        }
-                    }).show();
+        if (requestCode == MY_PERMISSION_REQUEST_CODE) {
+            boolean isAllGranted = true;
 
-                } else {
-                    //权限请求失败，但未选中“不再提示”选项
+            // 判断是否所有的权限都已经授予了
+            for (int grant : grantResults) {
+                if (grant != PackageManager.PERMISSION_GRANTED) {
+                    isAllGranted = false;
+                    break;
                 }
-                break;
+            }
+
+            if (isAllGranted) {
+                // 如果所有的权限都授予了, 跳转到主页
+
+            } else {
+                // 弹出对话框告诉用户需要权限的原因, 并引导用户去应用权限管理中手动打开权限按钮
+                openAppDetails();
             }
         }
-        if (hasAllGranted) {
-            //权限请求成功
-        }
 
+    }
+
+    //系统授权设置的弹框
+    android.support.v7.app.AlertDialog openAppDetDialog = null;
+
+    /**
+     * 打开 APP 的详情设置
+     */
+    private void openAppDetails() {
+        android.support.v7.app.AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.app_name) + "需要访问 \"设备信息\"、\"相册\"、\"定位\" 和 \"外部存储器\",请到 \"应用信息 -> 权限\" 中授予！");
+        builder.setPositiveButton("手动授权", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent();
+                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                intent.setData(Uri.parse("package:" + getPackageName()));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                startActivity(intent);
+            }
+        });
+        builder.setCancelable(false);
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        if (null == openAppDetDialog)
+            openAppDetDialog = builder.create();
+        if (null != openAppDetDialog && !openAppDetDialog.isShowing())
+            openAppDetDialog.show();
+    }
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if (Build.VERSION.SDK_INT < 23) {
+
+        } else if (!DeviceUtil.isAllGranted(this)) {
+            //判断基本的应用权限
+            openAppDetails();
+        } else if (!DeviceUtil.initMiuiPermission(this)) {
+            //如果基础的应用权限已经授取；切是小米系统，校验小米的授权管理页面的权限
+            DeviceUtil.openMiuiAppDetails(this);
+        } else {
+            //都没有问题了，跳转主页
+            //gotoHomeActivity();
+        }
     }
 }

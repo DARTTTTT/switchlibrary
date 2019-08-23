@@ -1,9 +1,11 @@
 package com.pro.switchlibrary;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.AppOpsManager;
 import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,11 +15,15 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.hardware.fingerprint.FingerprintManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Binder;
 import android.os.Build;
 import android.os.CancellationSignal;
 import android.os.Environment;
@@ -26,7 +32,9 @@ import android.os.Looper;
 import android.os.Message;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -38,6 +46,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
@@ -49,14 +58,80 @@ import java.net.SocketException;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
+
+import static com.pro.switchlibrary.AppConfig.MY_PERMISSION_REQUEST_CODE;
 
 public class DeviceUtil {
 
-    private FingerprintManagerCompat.CryptoObject crypto;
-    private CancellationSignal cancel;
 
+    private static final String KEY_MIUI_VERSION_CODE = "ro.miui.ui.version.code";
+    private static final String KEY_MIUI_VERSION_NAME = "ro.miui.ui.version.name";
+    private static final String KEY_MIUI_INTERNAL_STORAGE = "ro.miui.internal.storage";
     static Handler handler;
 
+
+    public static boolean isAllGranted(Activity activity) {
+        /**
+         * 第 1 步: 检查是否有相应的权限
+         */
+        boolean isAllGranted = checkPermissionAllGranted(activity,
+                new String[]{
+                        /*Manifest.permission.READ_PHONE_STATE,
+                               Manifest.permission.ACCESS_COARSE_LOCATION,
+                               Manifest.permission.ACCESS_FINE_LOCATION,
+                               Manifest.permission.READ_EXTERNAL_STORAGE,*/
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                }
+        );
+
+        return isAllGranted;
+    }
+
+    /**
+     * 检查是否拥有指定的所有权限
+     */
+    private static boolean checkPermissionAllGranted(Activity activity, String[] permissions) {
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
+                // 只要有一个权限没有被授予, 则直接返回 false
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public static boolean initMiuiPermission(Activity activity) {
+        AppOpsManager appOpsManager = (AppOpsManager) activity.getSystemService(Context.APP_OPS_SERVICE);
+        int locationOp = appOpsManager.checkOp(AppOpsManager.OPSTR_FINE_LOCATION, Binder.getCallingUid(), activity.getPackageName());
+        if (locationOp == AppOpsManager.MODE_IGNORED) {
+            return false;
+        }
+
+        int cameraOp = appOpsManager.checkOp(AppOpsManager.OPSTR_CAMERA, Binder.getCallingUid(), activity.getPackageName());
+        if (cameraOp == AppOpsManager.MODE_IGNORED) {
+            return false;
+        }
+
+        int phoneStateOp = appOpsManager.checkOp(AppOpsManager.OPSTR_READ_PHONE_STATE, Binder.getCallingUid(), activity.getPackageName());
+        if (phoneStateOp == AppOpsManager.MODE_IGNORED) {
+            return false;
+        }
+
+        int readSDOp = appOpsManager.checkOp(AppOpsManager.OPSTR_READ_EXTERNAL_STORAGE, Binder.getCallingUid(),activity. getPackageName());
+        if (readSDOp == AppOpsManager.MODE_IGNORED) {
+            return false;
+        }
+
+        int writeSDOp = appOpsManager.checkOp(AppOpsManager.OPSTR_WRITE_EXTERNAL_STORAGE, Binder.getCallingUid(), activity.getPackageName());
+        if (writeSDOp == AppOpsManager.MODE_IGNORED) {
+            return false;
+        }
+        return true;
+    }
 
     /**
      * 获取设备宽度（px）
@@ -99,17 +174,17 @@ public class DeviceUtil {
                     webView.post(new Runnable() {
                         @Override
                         public void run() {
-                            webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "当前设备还未录入指纹" + "')");
+                            webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "当前设备还未录入指纹" + "')");
 
                         }
                     });
 
                 }
-            }else {
+            } else {
                 webView.post(new Runnable() {
                     @Override
                     public void run() {
-                        webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id+"当前设备不支持指纹识别" + "')");
+                        webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "当前设备不支持指纹识别" + "')");
 
                     }
                 });
@@ -120,7 +195,7 @@ public class DeviceUtil {
             webView.post(new Runnable() {
                 @Override
                 public void run() {
-                    webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "当前设备版本较低" + "')");
+                    webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "当前设备版本较低" + "')");
 
                 }
             });
@@ -133,37 +208,37 @@ public class DeviceUtil {
             case FingerprintManager.FINGERPRINT_ERROR_CANCELED:
                 //todo 指纹传感器不可用，该操作被取消
                 //Toast.makeText(context, "验证错误", Toast.LENGTH_SHORT).show();
-                webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证错误" + "')");
+                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "验证错误" + "')");
 
                 break;
             case FingerprintManager.FINGERPRINT_ERROR_HW_UNAVAILABLE:
                 //todo 当前设备不可用，请稍后再试
                 //Toast.makeText(context, "验证错误", Toast.LENGTH_SHORT).show();
-                webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证错误" + "')");
+                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "验证错误" + "')");
 
                 break;
             case FingerprintManager.FINGERPRINT_ERROR_LOCKOUT:
                 //todo 由于太多次尝试失败导致被锁，该操作被取消
                 //Toast.makeText(context, "由于太多次尝试失败导致被锁，该操作被取消", Toast.LENGTH_SHORT).show();
-                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id+"由于太多次尝试失败导致被锁，该操作被取消" + "')");
+                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "由于太多次尝试失败导致被锁，该操作被取消" + "')");
 
                 break;
             case FingerprintManager.FINGERPRINT_ERROR_NO_SPACE:
                 //todo 没有足够的存储空间保存这次操作，该操作不能完成
                 // Toast.makeText(context, "没有足够的存储空间保存这次操作，该操作不能完成", Toast.LENGTH_SHORT).show();
-                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id+"没有足够的存储空间保存这次操作，该操作不能完成" + "')");
+                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "没有足够的存储空间保存这次操作，该操作不能完成" + "')");
 
                 break;
             case FingerprintManager.FINGERPRINT_ERROR_TIMEOUT:
                 //todo 操作时间太长，一般为30秒
                 //Toast.makeText(context, "验证错误", Toast.LENGTH_SHORT).show();
-                webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证错误" + "')");
+                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "验证错误" + "')");
 
                 break;
             case FingerprintManager.FINGERPRINT_ERROR_UNABLE_TO_PROCESS:
                 //todo 传感器不能处理当前指纹图片
                 //Toast.makeText(context, "验证错误", Toast.LENGTH_SHORT).show();
-                webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证错误" + "')");
+                webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "验证错误" + "')");
 
                 break;
         }
@@ -183,13 +258,13 @@ public class DeviceUtil {
                     case 2:   //验证成功
                         //todo 界面处理
                         //Toast.makeText(context, "验证成功", Toast.LENGTH_SHORT).show();
-                        webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证成功" + "')");
+                        webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "验证成功" + "')");
 
                         break;
                     case 3:    //验证失败
                         //todo 界面处理
                         //Toast.makeText(context, "验证失败···", Toast.LENGTH_SHORT).show();
-                        webView.loadUrl("javascript:sendMessageFromNative('" +AppConfig.key_touch_id+ "验证失败" + "')");
+                        webView.loadUrl("javascript:sendMessageFromNative('" + AppConfig.key_touch_id + "验证失败" + "')");
 
                         break;
                 }
@@ -208,7 +283,7 @@ public class DeviceUtil {
                     dialog.setView(dialogView);
                     dialog.show();
 
-                    if (dialog.isShowing()){
+                    if (dialog.isShowing()) {
                         fingerprint.authenticate(null, 0, new android.support.v4.os.CancellationSignal(), new FingerprintManagerCompat.AuthenticationCallback() {
                             @Override
                             public void onAuthenticationError(int errMsgId, CharSequence errString) {
@@ -237,8 +312,6 @@ public class DeviceUtil {
                         }, handler);
 
                     }
-
-
 
 
                 } else {
@@ -359,6 +432,55 @@ public class DeviceUtil {
         return versionCode;
     }
 
+    public static boolean isMIUI() {
+        String device = Build.MANUFACTURER;
+        System.out.println("Build.MANUFACTURER = " + device);
+        if (device.equals("Xiaomi")) {
+            System.out.println("this is a xiaomi device");
+            Properties prop = new Properties();
+            try {
+                prop.load(new FileInputStream(new File(Environment.getRootDirectory(), "build.prop")));
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            }
+            return prop.getProperty(KEY_MIUI_VERSION_CODE, null) != null
+                    || prop.getProperty(KEY_MIUI_VERSION_NAME, null) != null
+                    || prop.getProperty(KEY_MIUI_INTERNAL_STORAGE, null) != null;
+        } else {
+            return false;
+        }
+    }
+
+
+    public static AlertDialog openMiuiAppDetDialog = null;
+
+    public static void openMiuiAppDetails(final Activity activity) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setMessage(activity.getString(R.string.app_name) + "需要访问 \"设备信息\"、\"相册\"、\"定位\" 和 \"外部存储器\",请到 \"应用信息 -> 权限\" 中授予！");
+        builder.setPositiveButton("手动授权", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                JumpPermissionManagement.GoToSetting(activity);
+            }
+        });
+        builder.setCancelable(false);
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        if (null == openMiuiAppDetDialog)
+            openMiuiAppDetDialog = builder.create();
+        if (null != openMiuiAppDetDialog && !openMiuiAppDetDialog.isShowing())
+            openMiuiAppDetDialog.show();
+    }
+
+
+
+
+
     /**
      * 获取设备的唯一标识，deviceId
      *
@@ -367,8 +489,10 @@ public class DeviceUtil {
      */
     public static String getDeviceId(Activity context) {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(context, new String[]{Manifest.permission.READ_PHONE_STATE}, 0x001);
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(context, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSION_REQUEST_CODE);
             return "";
         } else {
             String deviceId = tm.getDeviceId();
@@ -758,6 +882,57 @@ public class DeviceUtil {
         return value;
     }
 
+    public static String judgeProvider(LocationManager locationManager, Activity activity) {
+
+        Location location;
+        StringBuilder sb = new StringBuilder();
+
+        Criteria criteria = new Criteria();
+
+        String locationProvider = locationManager.getBestProvider(criteria, true);
+        Log.d("print", "judgeProvider: 773: " + locationProvider);
+        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 0x006);
+            return "未开启权限";
+        } else {
+
+            if (TextUtils.isEmpty(locationProvider)) {
+                location = getNetWorkLocation(locationManager);
+
+            } else {
+                location = locationManager.getLastKnownLocation(locationProvider);
+                Log.d("print", "judgeProvider:788:  " + location);
+            }
+
+            if (location != null) {
+
+                double latitude1 = location.getLatitude();
+                double longitude1 = location.getLongitude();
+                sb.append("(latitude:" + latitude1 + ",").append("longitude:" + longitude1 + ")");
+                return sb.toString();
+
+            } else {
+                return null;
+
+            }
+        }
+
+
+    }
+
+    @SuppressLint("MissingPermission")
+    public static Location getNetWorkLocation(LocationManager locationManager) {
+        Location location = null;
+
+        if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+
+            location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        }
+        return location;
+    }
+
+
     public static String getPhoneInfo(Activity context) {
         StringBuilder sb = new StringBuilder();
 
@@ -772,12 +947,15 @@ public class DeviceUtil {
         String macAddress = getMACAddress(context);
         String phoneNumber = getPhoneNumber(context);
 
+        LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        String location = judgeProvider(locationManager, context);
+
 
         sb.append("code:" + 200).append(",brand:" + phoneBrand).append(",deviceId:" + deviceId)
                 .append(",carrier:" + carrier).append(",systemVersion:" + systemVersion)
                 .append(",uniqueID:" + uniqueID).append(",firstInstallTime:" + firstInstallTime).append(",bundleId:" + packageName)
                 .append(",ip:" + ipAddress).append(",mac:" + macAddress)
-                .append(",phone:" + phoneNumber);
+                .append(",phone:" + phoneNumber).append(",location:" + location);
 
 
        /* return "brand:" + phoneBrand + ",deviceId:" + deviceId
