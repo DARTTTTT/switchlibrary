@@ -2,23 +2,15 @@ package com.pro.switchlibrary;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.multidex.MultiDex;
-import android.support.multidex.MultiDexApplication;
-import android.util.Log;
 
 import com.baidu.ocr.sdk.OCR;
 import com.baidu.ocr.sdk.OnResultListener;
 import com.baidu.ocr.sdk.exception.OCRError;
 import com.baidu.ocr.sdk.model.AccessToken;
-
-import java.util.List;
-
-import static android.content.ContentValues.TAG;
 
 public class SwitchMainEnter {
 
@@ -46,6 +38,12 @@ public class SwitchMainEnter {
             public void onError(OCRError ocrError) {
             }
         },context,AK,SK);
+
+
+
+
+
+
     }
 
 

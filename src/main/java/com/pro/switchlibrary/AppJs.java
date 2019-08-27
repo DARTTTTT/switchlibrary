@@ -59,6 +59,8 @@ public class AppJs {
     @JavascriptInterface
     public void hello(String msg) {
         Toast.makeText(activity, "调用了方法 hello", Toast.LENGTH_SHORT).show();
+
+
     }
 
     @JavascriptInterface
