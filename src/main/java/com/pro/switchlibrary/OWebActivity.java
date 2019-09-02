@@ -664,7 +664,7 @@ public class OWebActivity extends BaseActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        if (Build.VERSION.SDK_INT < 23) {
+       /* if (Build.VERSION.SDK_INT < 23) {
 
         } else if (!DeviceUtil.isAllGranted(this)) {
             //判断基本的应用权限
@@ -675,6 +675,6 @@ public class OWebActivity extends BaseActivity {
         } else {
             //都没有问题了，跳转主页
             //gotoHomeActivity();
-        }
+        }*/
     }
 }
