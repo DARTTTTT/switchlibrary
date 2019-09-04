@@ -7,5 +7,6 @@ public class AppConfig {
     public static final String key_bank = "key_bank:";
     public static final String key_identify = "key_identify:";
     public static final int MY_PERMISSION_REQUEST_CODE = 10000;
-    public static String STAY_UM_KEY = "5bfe5375f1f55663090001d8";
+
+
 }

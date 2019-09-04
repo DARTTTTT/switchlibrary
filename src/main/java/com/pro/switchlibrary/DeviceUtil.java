@@ -9,7 +9,6 @@ import android.app.AppOpsManager;
 import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -25,13 +24,11 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Binder;
 import android.os.Build;
-import android.os.CancellationSignal;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -39,10 +36,8 @@ import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Display;
 import android.view.View;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -505,7 +500,7 @@ public class DeviceUtil {
     }
 
     // Mac地址
-    private static String getMACAddress(Context context) {
+    public static String getMACAddress(Context context) {
         WifiManager wifi = (WifiManager) context
                 .getSystemService(Context.WIFI_SERVICE);
         WifiInfo info = wifi.getConnectionInfo();

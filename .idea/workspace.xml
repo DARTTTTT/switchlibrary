@@ -11,10 +11,20 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="facc4c21-4e7b-4fb6-bbbb-1f9b53ca49d4" name="Default Changelist" comment="修改了壳的代码">
+    <list default="true" id="facc4c21-4e7b-4fb6-bbbb-1f9b53ca49d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/libs/armeabi-v7a/libarcsoft_face.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/armeabi-v7a/libarcsoft_face_engine.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/JumpPermissionManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OSUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/StatusBarUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SystemBarTintManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/layout_item_touch.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/icon_touch.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,68 +87,92 @@
     <session id="1041104423">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="7" />
-          <entry key="project.open.time.5" value="6" />
+          <entry key="project.open.time.5" value="7" />
           <entry key="project.open.time.6" value="5" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.opened" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
           <entry key="gitignore" value="1" />
-          <entry key="gradle" value="65" />
+          <entry key="gradle" value="70" />
           <entry key="html" value="2" />
           <entry key="iml" value="1" />
-          <entry key="java" value="268" />
+          <entry key="java" value="302" />
           <entry key="json" value="1" />
           <entry key="png" value="3" />
           <entry key="pro" value="1" />
-          <entry key="xml" value="62" />
+          <entry key="xml" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="Groovy" value="65" />
+          <entry key="Groovy" value="70" />
           <entry key="HTML" value="2" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="3" />
-          <entry key="JAVA" value="268" />
+          <entry key="JAVA" value="302" />
           <entry key="JSON" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="ProGuard File" value="1" />
-          <entry key="XML" value="62" />
+          <entry key="XML" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gradle" value="178" />
+          <entry key="gradle" value="388" />
           <entry key="html" value="45" />
-          <entry key="java" value="7230" />
-          <entry key="txt" value="129" />
+          <entry key="java" value="7609" />
+          <entry key="txt" value="140" />
           <entry key="xml" value="263" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="178" />
+          <entry key="Groovy" value="388" />
           <entry key="HTML" value="45" />
-          <entry key="JAVA" value="7230" />
-          <entry key="PLAIN_TEXT" value="129" />
+          <entry key="JAVA" value="7609" />
+          <entry key="PLAIN_TEXT" value="140" />
           <entry key="XML" value="263" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/SplashActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#10926#10927#0" expanded="true" />
+                <element signature="e#10957#10958#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -159,6 +193,7 @@
       <find>initMiuiPermission</find>
       <find>requestAppType</find>
       <find>hideKeyboard</find>
+      <find>310</find>
     </findStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -12263,12 +12298,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/IDcardQualityProcess.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/Camera2Control.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/CameraNativeHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/CameraView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/ICameraControl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/FrameOverlayView.java" />
         <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/camera/CameraActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/bd_ocr_confirm_result.xml" />
@@ -12284,7 +12313,6 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/layout_item_touch.xml" />
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/JumpPermissionManagement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppJs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/DualCameraHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/RegisterAndRecognizeActivity.java" />
@@ -12297,13 +12325,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SwitchMainEnter.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/../app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" />
-        <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/AppContext.java" />
         <option value="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/../app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" />
-        <option value="$PROJECT_DIR$/../app/build.gradle" />
-        <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/SplashActivity.java" />
         <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/TestActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SplashActivity.java" />
         <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/Host.java" />
@@ -12314,14 +12337,26 @@
         <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/SplashActivity.java" />
         <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/Apic.java" />
         <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/class_1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/StatusBarUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SystemBarTintManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OSUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java" />
+        <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/JsonEntity.java" />
+        <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/AppContext.java" />
+        <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/AppConfig.java" />
+        <option value="$PROJECT_DIR$/../app/build/generated/source/buildConfig/huawei/debug/com/hxjr/hxjr/BuildConfig.java" />
+        <option value="$PROJECT_DIR$/../app/build.gradle" />
+        <option value="$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/SplashActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -12331,6 +12366,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="switchlibrary" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="switchlibrary" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="switchlibrary" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="hxjr" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="switchlibrary" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -12383,80 +12445,15 @@
               <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="gradle" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FCG-LIBRARY" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="switchlibrary" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="switchlibrary" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="switchlibrary" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="1abcf292:AndroidViewProjectNode" />
-              <item name="switchlibrary" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="1abcf292:AndroidViewProjectNode" />
-              <item name="switchlibrary" type="feadf853:AndroidModuleNode" />
-              <item name="generatedJava" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="1abcf292:AndroidViewProjectNode" />
-              <item name="switchlibrary" type="feadf853:AndroidModuleNode" />
-              <item name="generatedJava" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="switchlibrary" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="switchlibrary" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="directory" />
     <property name="ExportApk.ApkPath" value="D:\Work\WorkProject\LT-NEW\FCG-LIBRARY\app" />
     <property name="ExportApk.BuildVariants" value="huaweiRelease" />
     <property name="ExportApk.SignV1" value="true" />
@@ -12475,6 +12472,7 @@
       <recent name="com.hxjr.hxjr" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hxjr.hxjr" />
       <recent name="com.pro.switchlibrary" />
       <recent name="com.pro.switchlibrary.camera" />
     </key>
@@ -12558,6 +12556,24 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [assembleHuawei]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assembleHuawei" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -12617,9 +12633,11 @@
       <item itemvalue="Gradle.switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [assemble]" />
       <item itemvalue="Gradle.switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [build]" />
       <item itemvalue="Gradle.switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [clean]" />
+      <item itemvalue="Gradle.switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [assembleHuawei]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [assembleHuawei]" />
         <item itemvalue="Gradle.switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [clean]" />
         <item itemvalue="Gradle.switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [build]" />
         <item itemvalue="Gradle.switchlibrary::Work:WorkProject:LT-NEW:FCG-LIBRARY:app [assemble]" />
@@ -12707,7 +12725,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566882576921</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="修复了相应提示">
+      <created>1567420085291</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1567420085291</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -12721,9 +12746,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20911528" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18431635" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -12735,7 +12761,7 @@
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Android Profiler" order="3" />
       <window_info anchor="bottom" id="Debug" order="4" />
-      <window_info anchor="bottom" id="Logcat" order="5" sideWeight="0.49865952" weight="0.50070924" />
+      <window_info anchor="bottom" id="Logcat" order="5" sideWeight="0.49865952" weight="0.4283688" />
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5013405" side_tool="true" weight="0.3602837" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
@@ -12749,7 +12775,7 @@
       <window_info anchor="right" id="Flutter Outline" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Preview" order="7" weight="0.3297587" />
-      <window_info anchor="right" id="Assistant" order="8" visible="true" weight="0.3297587" />
+      <window_info anchor="right" id="Assistant" order="8" weight="0.3297587" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -12764,19 +12790,10 @@
     <MESSAGE value="修改了指纹识别的方法" />
     <MESSAGE value="修改权限问题" />
     <MESSAGE value="修改了壳的代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了壳的代码" />
+    <MESSAGE value="修复了相应提示" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了相应提示" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/CameraHelper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/CameraListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/DualCameraHelper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/RegisterAndRecognizeActivity.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/TrackUtil.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/ConfigUtil.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/FacePreviewInfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/ItemShowInfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/FaceListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/FaceHelper.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/FaceRegisterInfo.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/FaceRectView.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/arccamera/DrawHelper.java" />
@@ -12814,13 +12831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -12836,49 +12846,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16416">
-          <caret line="669" column="23" selection-start-line="669" selection-start-column="23" selection-end-line="669" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/MainActivity.java" />
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/AppContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SwitchMainEnter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14850">
-          <caret line="612" column="25" selection-start-line="612" selection-start-column="25" selection-end-line="612" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/build/generated/source/buildConfig/huawei/debug/com/hxjr/hxjr/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -12892,23 +12864,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../app/app.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -12917,36 +12874,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/TestActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="215" column="9" lean-forward="true" selection-start-line="215" selection-start-column="9" selection-end-line="215" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3239#3240#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
-            <element signature="e#4474#4475#0" expanded="true" />
-            <element signature="e#4534#4535#0" expanded="true" />
-            <element signature="e#10462#10463#0" expanded="true" />
-            <element signature="e#10502#10503#0" expanded="true" />
-            <element signature="e#12221#13068#0" expanded="true" />
-            <element signature="e#13067#13068#0" expanded="true" />
-            <element signature="e#14463#14464#0" expanded="true" />
-            <element signature="e#14496#14497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/SplashActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/TestActivity.java" />
     <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/android/location/Location.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -12954,48 +12882,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/LocationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4417#4418#0" expanded="true" />
-            <element signature="e#4441#4442#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2479#2948#0" expanded="true" />
-            <element signature="e#2947#2948#0" expanded="true" />
-            <element signature="e#4751#4752#0" expanded="true" />
-            <element signature="e#4778#4779#0" expanded="true" />
-            <element signature="e#5330#5538#0" expanded="true" />
-            <element signature="e#5537#5538#0" expanded="true" />
-            <element signature="e#7121#7311#0" expanded="true" />
-            <element signature="e#7310#7311#0" expanded="true" />
-            <element signature="e#7375#7376#0" expanded="true" />
-            <element signature="e#7421#7422#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/StatusBarActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/LocationActivity.java" />
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/BaseActivity.java" />
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/StatusBarActivity.java" />
     <entry file="file://$PROJECT_DIR$/../../../../AndroidSDK/SDK/sources/android-28/android/location/LocationManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -13003,111 +12892,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/PermissionActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8825">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7801#12558#0" expanded="true" />
-            <element signature="e#12557#12558#0" expanded="true" />
-            <element signature="e#12584#12906#0" expanded="true" />
-            <element signature="e#12905#12906#0" expanded="true" />
-            <element signature="e#12928#13229#0" expanded="true" />
-            <element signature="e#13228#13229#0" expanded="true" />
-            <element signature="e#15240#15592#0" expanded="true" />
-            <element signature="e#15591#15592#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/Host.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#348#349#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/Apic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding>
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2079#2080#0" expanded="true" />
-            <element signature="e#2369#2370#0" expanded="true" />
-            <element signature="e#2435#2436#0" expanded="true" />
-            <element signature="e#4620#4621#0" expanded="true" />
-            <element signature="e#4686#4687#0" expanded="true" />
-            <element signature="e#8452#8453#0" expanded="true" />
-            <element signature="e#8517#8518#0" expanded="true" />
-            <element signature="e#15937#15938#0" expanded="true" />
-            <element signature="e#16004#16005#0" expanded="true" />
-            <element signature="e#18917#18918#0" expanded="true" />
-            <element signature="e#18984#18985#0" expanded="true" />
-            <element signature="e#21808#21809#0" expanded="true" />
-            <element signature="e#21870#21871#0" expanded="true" />
-            <element signature="e#23378#23379#0" expanded="true" />
-            <element signature="e#23448#23449#0" expanded="true" />
-            <element signature="e#26266#26267#0" expanded="true" />
-            <element signature="e#26331#26332#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/class_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="234" column="19" selection-start-line="234" selection-start-column="19" selection-end-line="234" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5283#5284#0" expanded="true" />
-            <element signature="e#5348#5349#0" expanded="true" />
-            <element signature="e#5395#5396#0" expanded="true" />
-            <element signature="e#5428#5429#0" expanded="true" />
-            <element signature="e#5888#5889#0" expanded="true" />
-            <element signature="e#5934#5935#0" expanded="true" />
-            <element signature="e#6907#6908#0" expanded="true" />
-            <element signature="e#6947#6948#0" expanded="true" />
-            <element signature="e#7005#7006#0" expanded="true" />
-            <element signature="e#7039#7040#0" expanded="true" />
-            <element signature="e#7098#7099#0" expanded="true" />
-            <element signature="e#7134#7135#0" expanded="true" />
-            <element signature="e#8913#8914#0" expanded="true" />
-            <element signature="e#8959#8960#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/SplashActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="163" column="80" lean-forward="true" selection-start-line="163" selection-start-column="80" selection-end-line="163" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3239#3240#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
-            <element signature="e#4474#4475#0" expanded="true" />
-            <element signature="e#4534#4535#0" expanded="true" />
-            <element signature="e#10462#10463#0" expanded="true" />
-            <element signature="e#10502#10503#0" expanded="true" />
-            <element signature="e#12221#13068#0" expanded="true" />
-            <element signature="e#13067#13068#0" expanded="true" />
-            <element signature="e#14463#14464#0" expanded="true" />
-            <element signature="e#14496#14497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/PermissionActivity.java" />
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/Host.java" />
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/Apic.java" />
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/class_1.java" />
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/test/SplashActivity.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/452a11bbbf4937fbf6d66bcc0aa132e4/jars/classes.jar!/android/support/v4/app/FragmentActivity.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="114" column="48" lean-forward="true" selection-start-line="114" selection-start-column="48" selection-end-line="114" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SystemBarTintManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OSUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/StatusBarUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2430">
+          <caret line="105" column="42" lean-forward="true" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/SwitchMainEnter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/OWebActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/DeviceUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="502" column="10" selection-start-line="502" selection-start-column="10" selection-end-line="502" selection-end-column="10" />
           <folding>
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_splash.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/res/layout/activity_splash.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/generated/source/buildConfig/debug/com/pro/switchlibrary/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pro/switchlibrary/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="48" column="52" lean-forward="true" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/build/generated/source/buildConfig/huawei/release/com/hxjr/hxjr/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/3.3.0/e5316ee57cf19c3c6704b3994a74e712b3d0eb00/builder-3.3.0-sources.jar!/com/android/builder/core/DefaultProductFlavor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="144" column="18" selection-start-line="144" selection-start-column="18" selection-end-line="144" selection-end-column="18" />
+          <folding>
+            <element signature="e#4305#4306#0" expanded="true" />
+            <element signature="e#4342#4343#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="63" lean-forward="true" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/AppContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1998">
+          <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/JsonEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/build/generated/source/buildConfig/huawei/debug/com/hxjr/hxjr/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/main/java/com/hxjr/hxjr/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10926#10927#0" expanded="true" />
+            <element signature="e#10957#10958#0" expanded="true" />
           </folding>
         </state>
       </provider>
